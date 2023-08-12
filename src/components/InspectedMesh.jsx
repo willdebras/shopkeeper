@@ -2,14 +2,8 @@
 /* eslint-disable react/prop-types */
 import { useGLTF, useTexture, Resize } from "@react-three/drei"
 import * as THREE from "three"
-  
-  const mapping = {
-    helmet: {
-        model: 'helmetPainting.glb',
-        texture: 'HelmetCombinedMapPainted.png',
-        rotationY: -1.6
-    }
-  }
+
+import { mapping } from '../mapping.js'
 
   export default function InspectedMesh({modelName}) {
 
@@ -20,16 +14,18 @@ import * as THREE from "three"
     const model = useGLTF(`./models/${modelMapping?.model}`)
     const texture = useTexture(`./textures/${modelMapping?.texture}`)
     texture.flipY = false
-
+    
     const rotation = modelMapping.rotationY
 
+    console.log(model.nodes[Object.keys(model.nodes)[1]])
 
     return <>
     <Resize width={true} height={true} >
         <mesh 
             geometry={ model.nodes[Object.keys(model.nodes)[1]].geometry } 
-            position={ model.nodes[Object.keys(model.nodes)[1]].position }
+            // position={ model.nodes[Object.keys(model.nodes)[1]].position }
             scale={ model.nodes[Object.keys(model.nodes)[1]].scale }
+            rotation={ model.nodes[Object.keys(model.nodes)[1]].rotation }
             rotation-y={rotation}
         >
             <meshBasicMaterial map={ texture } attach='material' />

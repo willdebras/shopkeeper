@@ -12,7 +12,7 @@ export default function Experience({selectedModel}) {
         <color args={ [ 'darkgrey' ] } attach="background"></color>
 
     <group position-z={3.5} position-x={-0.6}>
-        <Stage adjustCamera={false}>        
+        {/* <Stage adjustCamera={false}>         */}
             <PresentationControls
                 global
                 enabled={true}
@@ -24,7 +24,7 @@ export default function Experience({selectedModel}) {
             >
                 <InspectedMesh modelName={selectedModel} />
             </PresentationControls>
-        </Stage>
+        {/* </Stage> */}
     </group>
 
         {/* <Sky /> */}

@@ -1,6 +1,56 @@
-.shop {
+.shopWrapper {
     z-index: 99;
     position: absolute;
     top: 0;
-    left: 0;
+    right:6%;
+    bottom:0;
+    height:600px;
+    margin:auto;
+
+}
+
+.shop {
+    display:flex;
+    border-radius:6px;
+    border: 1px solid darkslategray;
+    width:400px;
+    height:100%;
+    gap:10px;
+    flex-wrap:wrap;
+    padding:14px;
+}
+
+.shopItem {
+    position:relative;
+    width:86px;
+    height:86px;
+    border-radius:10%;
+    border:1px solid darkslateblue;
+    background-size:contain;
+}
+
+.shopItemTitle {
+    position:absolute;
+    bottom:0;
+    right:6px;
+    font-size:14px;
+    background-color:lemonchiffon;
+    background-color: rgba(255, 250, 205, 0.6);
+    padding:0 4px;
+    border-radius:2px;
+}
+
+.shopButton {
+    width: max-content;
+    height: max-content;
+    background-color: revert;
+    padding: 0;
+    margin: 0;
+    border-radius: 10%;
+    border: none;
+}
+
+.shopButton:hover {
+    transform:translateY(-2px);
+    box-shadow: 0 0 2px 2px lemonchiffon;
 }
